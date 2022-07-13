@@ -26,9 +26,10 @@
                 let rows = Number(rowsInput);
                 let columns = Number(columnsInput);
 
-                /*
-                if (!isNaN(rows) && !isNaN(columns)) doesn't work
-                Doesn't work with negatives anyway and gives no output for 0 so changed to >0. This will also show alert for string input. 
+                
+                /* 
+                Needed to use if (!Number.isNaN(rows) && !Number.isNaN(columns)) rather than if (isNaN(rows) && !isNaN(columns)) as shown in training video
+                Keeping my workaround of >0 as code doesn't handle negative numbers.
                 */
                 if(rows>0 && columns>0){
                     let tableHTML = createMultiplicationTable(rows, columns);
